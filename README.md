@@ -6,3 +6,4 @@ This project provides you a minimal setup to get React working in Vite and showi
 Typescript, React, Node.js and Visual Studio Code.
 
 ## Expanding the ESLint configuration
+
