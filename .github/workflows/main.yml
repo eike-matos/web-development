@@ -1,0 +1,18 @@
+name: 'Verify Branch Name'
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  check-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anchore/branch-naming-convention-action@v1
+        with:
+          # Regra: Começa com 'feature/', 'fix/', ou 'hotfix/'
+          # seguido de 'qualquer coisa' (.+)
+          regex: '^(feature|fix|hotfix)\/.+$'
+          
+          # Mensagem de falha em inglês
+          failure_message: "Invalid branch name. Branch must start with 'feature/', 'fix/', or 'hotfix/'."
